@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name – CV</title>
+  <meta name="description" content="Curriculum Vitae of Your Name" />
+  <!--
+    HOW TO USE
+    1) Replace placeholder content below with your real details.
+    2) Commit this single file as index.html to a GitHub repo.
+    3) Enable GitHub Pages (main branch / root) to publish.
+    4) Print to PDF using the “Download PDF” button (uses your browser’s print dialog).
+  -->
+  <style>
+    :root{
+      --bg: #0b0d10;         /* dark bg */
+      --card: #12151a;       /* dark card */
+      --text: #eaeef5;       /* light text */
+      --muted: #9fb0c3;      /* muted text */
+      --accent: #5bbcff;     /* accent */
+      --chip: #1b212a;       /* chip bg */
+      --link: #8bd3ff;
+      --print-text: #111318;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f9fc;
+        --card: #ffffff;
+        --text: #111318;
+        --muted: #465566;
+        --accent: #1e80ff;
+        --chip: #eef3f9;
+        --link: #0a66c2;
+      }
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:920px;margin:40px auto;padding:0 20px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,0.25);padding:28px}
+    header.hero{display:grid;grid-template-columns:96px 1fr auto;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.15)}
+    h1{font-size:28px;line-height:1.2;margin:0}
+    .role{color:var(--muted);margin-top:6px}
+    .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .chip{background:var(--chip);border:1px solid rgba(255,255,255,0.08);padding:6px 10px;border-radius:999px;font-size:14px}
+    .actions{display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#001018;border:none;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.16);color:var(--text)}
+
+    section{margin-top:22px}
+    h2{font-size:18px;letter-spacing:.3px;margin:0 0 10px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .item{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:18px}
+    .item h3{margin:0;font-size:16px}
+    .sub{color:var(--muted);font-size:14px}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .badge{background:var(--chip);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:4px 8px;font-size:13px}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin-top:6px}
+    ul{margin:8px 0 0 18px}
+
+    footer{margin:30px 0;color:var(--muted);font-size:14px;text-align:center}
+
+    @media(min-width:720px){
+      .two{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    }
+
+    /* Print-friendly */
+    @media print{
+      :root{--bg:#fff;--card:#fff;--text:var(--print-text);--muted:#333;--chip:#f1f1f1}
+      body{background:#fff}
+      .container{max-width:100%;margin:0;padding:0}
+      .card, .item{border:none;box-shadow:none}
+      .btn, .actions{display:none}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header class="hero">
+        <!-- Replace the image src or remove the <img> entirely if you don't want a photo -->
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="Your headshot" />
+        <div>
+          <h1>Your Name</h1>
+          <div class="role">Graduate Software Automation Engineer • Dublin, IE</div>
+          <div class="contact">
+            <span class="chip">📧 <a href="mailto:your.email@example.com">your.email@example.com</a></span>
+            <span class="chip">🌐 <a href="https://yourname.github.io" target="_blank" rel="noopener">yourname.github.io</a></span>
+            <span class="chip">🐙 <a href="https://github.com/yourhandle" target="_blank" rel="noopener">github.com/yourhandle</a></span>
+            <span class="chip">💼 <a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener">linkedin.com/in/yourhandle</a></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="window.print()">⬇️ Download PDF</button>
+          <button class="btn secondary" id="toggle">🌗 Theme</button>
+        </div>
+      </header>
+
+      <section class="two">
+        <div>
+          <section>
+            <h2>Profile</h2>
+            <p>
+              Results-driven QA/Automation Engineer with 1.5 years’ experience building robust test suites, CI pipelines, and data-driven scenarios. Strong Python + Selenium, BDD (Gherkin), and Django web projects. Passionate about clean code, education tech, and women’s football.
+            </p>
+          </section>
+
+          <section>
+            <h2>Experience</h2>
+            <div class="grid">
+              <div class="item">
+                <h3>Graduate Software Automation Engineer · Company Name</h3>
+                <div class="meta">Dublin, IE · Jan 2024 – Present</div>
+                <ul>
+                  <li>Designed end-to-end Selenium test suites for a Django app; cut regression time by 60%.</li>
+                  <li>Implemented BDD with Gherkin + Pytest; standardized test narratives across teams.</li>
+                  <li>Built GitHub Actions CI jobs for linting, tests, and coverage gates.</li>
+                </ul>
+                <div class="badges">
+                  <span class="badge">Python</span>
+                  <span class="badge">Selenium</span>
+                  <span class="badge">Pytest</span>
+                  <span class="badge">BDD/Gherkin</span>
+                  <span class="badge">GitHub Actions</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h3>Part-time Role · Company / University</h3>
+                <div class="meta">Summer 2024</div>
+                <ul>
+                  <li>Supported data quality checks and dashboard maintenance.</li>
+                  <li>Automated routine QA checks using Python scripts.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Projects</h2>
+            <div class="grid">
+              <div class="item">
+                <h3>AWFC Irish Gooners – Django Site</h3>
+                <div class="sub">About/Contact pages, Bootstrap styling, live data scraping for women’s leagues.</div>
+                <div class="meta"><a href="#">Repo</a> · <a href="#">Live</a></div>
+                <ul>
+                  <li>Implemented profiles for Alison, Emer & Grace; added iconography to Contact page.</li>
+                  <li>Planned pages for NWSL, England, Ireland, Europe with scraping support.</li>
+                </ul>
+                <div class="badges">
+                  <span class="badge">Django</span>
+                  <span class="badge">Bootstrap</span>
+                  <span class="badge">Selenium</span>
+                </div>
+              </div>
+              <div class="item">
+                <h3>Python Discord Bot</h3>
+                <div class="sub">Utility bot with slash commands and CI-driven deployment.</div>
+                <ul>
+                  <li>Wrote modular cogs, added linting + tests with GitHub Actions.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div>
+          <section>
+            <h2>Skills</h2>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">Selenium</span>
+              <span class="badge">Pytest</span>
+              <span class="badge">BDD</span>
+              <span class="badge">Django</span>
+              <span class="badge">Git</span>
+              <span class="badge">GitHub Actions</span>
+              <span class="badge">HTML/CSS</span>
+              <span class="badge">SQL</span>
+            </div>
+          </section>
+
+          <section>
+            <h2>Education</h2>
+            <div class="item">
+              <h3>BSc (Hons) – Course Title</h3>
+              <div class="meta">University Name · 2020 – 2024</div>
+              <ul>
+                <li>Final-year project on [topic].</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Certifications</h2>
+            <div class="item">
+              <ul>
+                <li>ISTQB Foundation (YYYY)</li>
+                <li>AWS Cloud Practitioner (YYYY)</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Interests</h2>
+            <div class="badges">
+              <span class="badge">Women’s Football</span>
+              <span class="badge">Education Tech</span>
+              <span class="badge">Data Viz</span>
+              <span class="badge">Travel</span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <div class="sub">Available on request.</div>
+      </section>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Your Name • Built with a single HTML file on GitHub Pages
+    </footer>
+  </div>
+
+  <!-- JSON-LD Resume/Person schema for rich search results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "jobTitle": "Software Automation Engineer",
+    "email": "mailto:your.email@example.com",
+    "url": "https://yourname.github.io",
+    "image": "https://yourname.github.io/headshot.jpg",
+    "sameAs": [
+      "https://github.com/yourhandle",
+      "https://www.linkedin.com/in/yourhandle"
+    ]
+  }
+  </script>
+
+  <script>
+    // Year + simple theme toggle (persists)
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('toggle');
+    const LS_KEY = 'cv-theme';
+    function applyTheme(mode){
+      if(mode==='light'){
+        document.documentElement.style.setProperty('--bg', '#f7f9fc');
+        document.documentElement.style.setProperty('--card', '#ffffff');
+        document.documentElement.style.setProperty('--text', '#111318');
+        document.documentElement.style.setProperty('--muted', '#465566');
+        document.documentElement.style.setProperty('--accent', '#1e80ff');
+        document.documentElement.style.setProperty('--chip', '#eef3f9');
+        document.documentElement.style.setProperty('--link', '#0a66c2');
+      } else {
+        document.documentElement.style.setProperty('--bg', '#0b0d10');
+        document.documentElement.style.setProperty('--card', '#12151a');
+        document.documentElement.style.setProperty('--text', '#eaeef5');
+        document.documentElement.style.setProperty('--muted', '#9fb0c3');
+        document.documentElement.style.setProperty('--accent', '#5bbcff');
+        document.documentElement.style.setProperty('--chip', '#1b212a');
+        document.documentElement.style.setProperty('--link', '#8bd3ff');
+      }
+    }
+    const saved = localStorage.getItem(LS_KEY);
+    if(saved) applyTheme(saved);
+    if(btn){
+      btn.addEventListener('click', ()=>{
+        const cur = localStorage.getItem(LS_KEY) || 'dark';
+        const next = cur==='dark' ? 'light' : 'dark';
+        localStorage.setItem(LS_KEY, next);
+        applyTheme(next);
+      });
+    }
+  </script>
+</body>
+</html>
