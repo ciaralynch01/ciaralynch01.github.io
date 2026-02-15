@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo App</title>
+  <style>
+    body{font:16px/1.5 system-ui;margin:40px;max-width:760px}
+    label{display:block;margin-top:12px}
+    input{padding:10px;width:280px}
+    button{margin-top:12px;padding:10px 14px;cursor:pointer}
+    .ok{color:green;margin-top:12px;display:none}
+  </style>
+</head>
+<body>
+  <h1>Test Automation Demo App</h1>
+
+  <h2>Login</h2>
+  <label>Email
+    <input id="email" type="email" placeholder="ciara@example.com" />
+  </label>
+  <label>Password
+    <input id="password" type="password" placeholder="password" />
+  </label>
+  <button id="login">Login</button>
+
+  <div id="success" class="ok">✅ Logged in</div>
+
+  <script>
+    document.getElementById('login').addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      const pw = document.getElementById('password').value.trim();
+      if(email && pw){
+        document.getElementById('success').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
