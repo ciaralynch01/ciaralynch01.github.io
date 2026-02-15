@@ -57,6 +57,24 @@
       .card,.item{border:none;box-shadow:none}
       a{text-decoration:none;color:inherit}
     }
+
+    /* ✅ NEW: mini navigation pills under your contact chips */
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+    .nav a{
+      background:var(--chip);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
   </style>
 </head>
 <body>
@@ -67,13 +85,25 @@
         <div>
           <h1>Ciara Lynch</h1>
           <div class="role">Software Development Engineer in Test (SDET) • Dublin, IE</div>
+
           <div class="contact">
             <span class="chip">📧 <a href="mailto:ciaralynch2408@gmail.com">ciaralynch2408@gmail.com</a></span>
             <span class="chip">📱 0876127678</span>
             <span class="chip">💼 <a href="https://www.linkedin.com/in/ciara-lynch-b50439189/" target="_blank" rel="noreferrer">LinkedIn</a></span>
-            <span class="chip">🐙 <a href="https://github.com/wheezy01" target="_blank" rel="noreferrer">github.com/wheezy01</a></span>
+            <span class="chip">🐙 <a href="https://github.com/ciaralynch01" target="_blank" rel="noreferrer">github.com/ciaralynch01</a></span>
             <span class="chip">📍 Dublin 13</span>
           </div>
+
+          <!-- ✅ NEW: quick links to your demo app + CI + reports -->
+          <nav class="nav" aria-label="Quick links">
+            <a href="#projects">🧪 Projects</a>
+
+            <!-- Replace these placeholders once your repo exists -->
+            <a href="https://github.com/ciaralynch01/YOUR-REPO" target="_blank" rel="noreferrer">🚀 Demo App Repo</a>
+            <a href="https://ciaralynch01.github.io/YOUR-REPO/" target="_blank" rel="noreferrer">🌐 Live UI</a>
+            <a href="https://ciaralynch01.github.io/YOUR-REPO/allure/" target="_blank" rel="noreferrer">📊 Allure Report</a>
+            <a href="https://github.com/ciaralynch01/YOUR-REPO/actions" target="_blank" rel="noreferrer">✅ CI Pipeline</a>
+          </nav>
         </div>
       </header>
 
@@ -170,13 +200,16 @@
             </div>
           </section>
 
-          <section>
+          <!-- ✅ UPDATED: add id for anchor scroll -->
+          <section id="projects">
             <h2>Projects</h2>
             <div class="item">
               <h3>Automated Testing</h3>
               <ul>
                 <li>Developed a custom Linux shell in C, strengthening understanding of operating systems and scripting.</li>
                 <li>Led an automation testing project using BDD frameworks, improving test execution efficiency.</li>
+                <!-- Optional: add your demo app line once created -->
+                <!-- <li><strong>Test Automation Demo App:</strong> FastAPI + UI + PyTest/Playwright + CI + Allure reporting.</li> -->
               </ul>
             </div>
             <div class="item" style="margin-top:14px">
@@ -216,10 +249,10 @@
     "name": "Ciara Lynch",
     "jobTitle": "Software Development Engineer in Test (SDET)",
     "email": "mailto:ciaralynch2408@gmail.com",
-    "url": "https://wheezy01.github.io",
-    "image": "https://wheezy01.github.io/headshot.jpg",
+    "url": "https://ciaralynch01.github.io",
+    "image": "https://ciaralynch01.github.io/headshot.jpg",
     "sameAs": [
-      "https://github.com/wheezy01",
+      "https://github.com/ciaralynch01",
       "https://www.linkedin.com/in/ciara-lynch-b50439189/"
     ],
     "worksFor": {
@@ -257,7 +290,14 @@
     }
     const saved=localStorage.getItem(LS_KEY);
     if(saved) applyTheme(saved);
-    if(btn){btn.addEventListener('click',()=>{const cur=localStorage.getItem(LS_KEY)||'dark';const next=cur==='dark'?'light':'dark';localStorage.setItem(LS_KEY,next);applyTheme(next);});}
+    if(btn){
+      btn.addEventListener('click',()=>{
+        const cur=localStorage.getItem(LS_KEY)||'dark';
+        const next=cur==='dark'?'light':'dark';
+        localStorage.setItem(LS_KEY,next);
+        applyTheme(next);
+      });
+    }
   </script>
 </body>
 </html>
